@@ -2,6 +2,8 @@ ASTEROIDS
 =========
 
 In canvas! My parents will be so excited!
+You can play the game [here](http://wetmore.github.com/asteroids/ast.htm). The __arrow keys__ control movement, and you can shoot with __spacebar__. Spawn asteroids with __a__. Pressing __s__ will flip the ship. There ae a few debug keys still there as well.
+
 
 About
 -----
