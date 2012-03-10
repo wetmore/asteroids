@@ -138,9 +138,7 @@ window.onload = function() {
     }
   };
 
-  //TODO check if map is written properly
   function rangeMap(val, l1, h1, l2, h2) {
-    //return l2 + (val/(h1-l1))*(h2-l2);
     return l2 + ((val - l1) / (h1 - l1)) * (h2 - l2);
   }
 
@@ -199,14 +197,11 @@ window.onload = function() {
 
       for (var j = 0; j < bullets.length; j++) {
         if (boundBoxCollide(bullets[j].pos, a.pos, 2*r, 2*r)) {
-          //find angle between bullet and center of asteroid, find which line segment that intersects, then apply
-          //point-line distance to see if the bullet is inside the asteroid
           var bpos = bullets[j].pos;          
 
           var vec = new V.Vector(bpos.x - a.pos.x, bpos.y - a.pos.y);
           var vec2 = new V.Vector(Math.cos(a.angle), Math.sin(a.angle));
-          //TODO put this in vector class
-          var ang = Math.atan2(vec.x * vec2.y - vec2.x * vec.y, vec.x * vec2.x + vec.y * vec2.y)%(2 * Math.PI);
+          var ang = vec.angleBetween2Pi(vec2);
           ang = ang < 0 ? Math.PI + (Math.PI + ang) : ang;
           var pt = rangeMap(ang, 0, 2*Math.PI, astSegments, 0);
           pt = Math.floor(pt);
