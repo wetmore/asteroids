@@ -344,7 +344,6 @@ window.onload = function() {
         g.ctx.drawImage(image, -2*r, -2*r, 4*r, 4*r);
       }
       g.ctx.restore();
-      //line(asteroids[i].pos.x, asteroids[i].pos.y, pos.x, pos.y);
     }
 
     //text
