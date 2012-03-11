@@ -21,11 +21,7 @@ var Vector2D = (function() {
         }
       }
       if (type !== atypes[i]) {
-        console.error(which + ' argument is ' + type + ', expected ' + atypes[i]);
-        console.groupCollapsed('details');
-        console.error('In function:\n' + args.callee);
-        console.error('which was called by:\n' + args.callee.caller);
-        console.groupEnd();
+        console.error((new Error(which + ' argument is ' + type + ', expected ' + atypes[i])).stack);
       }
     }
   };
